@@ -1,5 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/todos')
+const cors = require('cors');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
