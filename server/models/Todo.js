@@ -6,12 +6,13 @@ const todoSchema = new Schema ({
     type: String,
     required: [true, 'tugas gk boleh kosong']
   },
-  tglTugas: Date,
-  status: Boolean,
+  desc: {
+    type: String,
+    required: [true, 'desc gk boleh kosong']
+  },
+  status: {type: Boolean, default: false},
   tags:[{ type: String }],
-  createdBy: {
-    type: Schema.Types.ObjectId, ref: "User"
-  }
+  author: { type: Schema.Types.ObjectId, ref: "User" }
 }, {
   timestamps: true
 })
